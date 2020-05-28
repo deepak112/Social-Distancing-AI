@@ -34,7 +34,21 @@ Tool to moniter social distancing from CCTV, videos using Python, Deep learning,
          python main.py
      * If paths for models, input video is different then given directory structure
          python main.py --model='model path' --video_path='path to video file' --output_dir='output directory' --output_vid='output vid directory'
-               
+         
+## How it works:
+
+     * Run following command(if directory structure is same) 
+         python main.py
+         
+     * You will get a frame where you can draw ROI and distance scale. It will take 8 points on first frame using mouse click        event.First four points will define ROI where we want to moniter social distancing. Also these points should form 
+       parallel lines in real world if seen from above(birds eye view). Next 3 points will define 6 feet(unit length) 
+       distance in horizontal and vertical direction and those should form parallel lines with ROI. Unit length we can take 
+       based on choice. Points should pe in pre-defined order - bottom-left, bottom-right, top-right, top-left, point 5 and 6 
+       should form horizontal line and point 5 and 7 should form verticle line. Horizontal and vertical scale will be 
+       different. Gif below will help understand points better.
+             
+       ![Bird Eye View](./demo/bird_eye_view.gif)
+       
 ## Output:
 
 Bird's Eye View       
@@ -47,7 +61,7 @@ More result frames are in output folder
 
 ## Idea Credits
 
-    Landing.ai
+Landing.ai
 
 ## License:
 
