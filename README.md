@@ -37,8 +37,10 @@ Tool to moniter social distancing from CCTV, videos using Python, Deep learning,
                
 ## Output:
 
-Bird Eye View          |  Output frames
-:------------------   :|:--------------------------------------------------:
-![Output 1](./demo/bird_eye_view.gif) ![Output 2](./demo/social_distancing.gif)
+Bird Eye View       
+![Bird Eye View](./demo/bird_eye_view.gif) 
+
+Output
+![Output 2](./demo/social_distancing.gif)
     
 More result frames are in output folder
