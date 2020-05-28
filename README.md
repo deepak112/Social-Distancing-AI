@@ -15,7 +15,12 @@ Tool to moniter social distancing from CCTV, videos using Python, Deep learning,
     numpy 1.14.5
     argparse
     
-    For running: Good GPU, for faster results. CPU is also fine
+    For person detection:
+    yolov3.weights, yolov3.cfg files (weights file in not present because of size issue. It can be downloaded from 
+    here : https://pjreddie.com/media/files/yolov3.weights)
+    
+    For running: 
+    Good GPU, for faster results. CPU is also fine
     
 ## File Structure:
 
@@ -46,6 +51,13 @@ Tool to moniter social distancing from CCTV, videos using Python, Deep learning,
        based on choice. Points should pe in pre-defined order - bottom-left, bottom-right, top-right, top-left, point 5 and 6 
        should form horizontal line and point 5 and 7 should form verticle line. Horizontal and vertical scale will be 
        different. Gif below will help understand points better.
+       
+     * We will transform prespective of ROI so that we can have top view of scene or ROI. This top view or bird eye view has        the property that points are distributed uniformally horizontally and vertically(scale for horizontal and vertical     
+       direction will be different). So for bird eye view points are equally distributed, which was not case for normal view.
+       
+     * YOLO V3 is used to detect persons in frame and by calculating center point of bounding boxe around persons, 
+       we transform those points to bird eye view. And then calculates risk factor by calculating distance between
+       points and then drawing birds eye view and drawing bounding boxes and distance lines between boxes on frame.
              
 ![Bird Eye View](./demo/demo.gif)
        
