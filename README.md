@@ -47,7 +47,7 @@ Tool to moniter social distancing from CCTV, videos using Python, Deep learning,
        should form horizontal line and point 5 and 7 should form verticle line. Horizontal and vertical scale will be 
        different. Gif below will help understand points better.
              
-![Bird Eye View](./demo/bird_eye_view.gif)
+![Bird Eye View](./demo/demo.gif)
        
 ## Output:
 
