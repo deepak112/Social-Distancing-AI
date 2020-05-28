@@ -37,10 +37,21 @@ Tool to moniter social distancing from CCTV, videos using Python, Deep learning,
                
 ## Output:
 
-Bird Eye View       
+Bird's Eye View       
 ![Bird Eye View](./demo/bird_eye_view.gif) 
 
-Output
+Output frames
 ![Output 2](./demo/social_distancing.gif)
     
 More result frames are in output folder
+
+## Idea Credits
+
+    Landing.ai
+
+## License:
+
+Copyright © 2020, [Deepak Birla](https://github.com/deepak112). Released under the [MIT License](https://github.com/deepak112/Social-Distancing-AI/blob/master/LICENSE).
+
+
+
