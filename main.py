@@ -6,7 +6,7 @@ we can have top view of scene or ROI. This top view or bird eye view has the pro
 distributed uniformally horizontally and vertically(scale for horizontal and vertical direction will be
  different). So for bird eye view points are equally distributed, which was not case for normal view.
 
-YOLO V3 is used to detect persons in frame and by calculating center point of bounding boxe around persons, 
+YOLO V3 is used to detect humans in frame and by calculating center point of bounding boxe around humans, 
 we transform those points to bird eye view. And then calculates risk factor by calculating distance between
 points and then drawing birds eye view and drawing bounding boxes and distance lines between boxes on frame.
 '''
@@ -124,7 +124,7 @@ def calculate_social_distancing(vid_path, net, output_dir, output_vid, ln1):
         # since bird eye view has property that all points are equidistant in horizontal and vertical direction.
         # distance_w and distance_h will give us 180 cm distance in both horizontal and vertical directions
         # (how many pixels will be there in 180cm length in horizontal and vertical direction of birds eye view),
-        # which we can use to calculate distance between two persons in transformed view or bird eye view
+        # which we can use to calculate distance between two humans in transformed view or bird eye view
         distance_w = np.sqrt((warped_pt[0][0] - warped_pt[1][0]) ** 2 + (warped_pt[0][1] - warped_pt[1][1]) ** 2)
         distance_h = np.sqrt((warped_pt[0][0] - warped_pt[2][0]) ** 2 + (warped_pt[0][1] - warped_pt[2][1]) ** 2)
         pnts = np.array(points[:4], np.int32)
@@ -147,7 +147,7 @@ def calculate_social_distancing(vid_path, net, output_dir, output_vid, ln1):
                 scores = detection[5:]
                 classID = np.argmax(scores)
                 confidence = scores[classID]
-                # detecting persons in frame
+                # detecting humans in frame
                 if classID == 0:
 
                     if confidence > confid:
@@ -178,13 +178,13 @@ def calculate_social_distancing(vid_path, net, output_dir, output_vid, ln1):
         # center points to bird eye view
         person_points = utills.get_transformed_points(boxes1, prespective_transform)
         
-        # Here we will calculate distance between transformed points(persons)
+        # Here we will calculate distance between transformed points(humans)
         distances_mat, bxs_mat = utills.get_distances(boxes1, person_points, distance_w, distance_h)
         risk_count = utills.get_count(distances_mat)
     
         frame1 = np.copy(frame)
         
-        # Draw bird eye view and frame with bouding boxes around persons according to risk factor    
+        # Draw bird eye view and frame with bouding boxes around humans according to risk factor    
         bird_image = plot.bird_eye_view(frame, distances_mat, person_points, scale_w, scale_h, risk_count)
         img = plot.social_distancing_view(frame1, bxs_mat, boxes1, risk_count)
         
