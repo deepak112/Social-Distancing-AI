@@ -2,8 +2,8 @@
 
 '''
 Contains functions to calculate center for all bounding boxes and transform prespective for all points,
-calculate distance between persons, calculate width and height scale ratio for bird eye view,
-and calculates number of persons at risk, low risk, no risk according to closeness.
+calculate distance between humans, calculate width and height scale ratio for bird eye view,
+and calculates number of humans at risk, low risk, no risk according to closeness.
 '''
 
 __title__           = "utills.py"
@@ -32,7 +32,7 @@ def get_transformed_points(boxes, mi):
         
     return bottom_points
 
-# Function calculates distance between two points(persons). distance_w, distance_h represents number
+# Function calculates distance between two points(humans). distance_w, distance_h represents number
 # of pixels in 180cm length horizontally and vertically. We calculate horizontal and vertical
 # distance in pixels for two points and get ratio in terms of 180 cm distance using distance_w, distance_h.
 # Then we calculate how much cm distance is horizontally and vertically and then using pythagoras
@@ -81,7 +81,7 @@ def get_scale(W, H):
     
     return float(dis_w/W),float(dis_h/H)
     
-# Function gives count for persons at high risk, low risk and no risk    
+# Function gives count for humans at high risk, low risk and no risk    
 def get_count(distances_mat):
 
     r = []
