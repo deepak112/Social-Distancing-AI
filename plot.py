@@ -2,7 +2,7 @@
 
 '''
 Contain functions to draw Bird Eye View for region of interest(ROI) and draw bounding boxes according to risk factor
-for persons in a frame and draw lines between boxes according to risk factor between two persons. 
+for humans in a frame and draw lines between boxes according to risk factor between two humans. 
 draw 
 '''
 
@@ -19,8 +19,7 @@ __python_version__  = "3.5.2"
 import cv2
 import numpy as np
 
-# Function to draw Bird Eye View for region of interest(ROI). Red, Yellow, Green points represents risk to 
-# person. 
+# Function to draw Bird Eye View for region of interest(ROI). Red, Yellow, Green points represents risk to human. 
 # Red: High Risk
 # Yellow: Low Risk
 # Green: No Risk
@@ -82,8 +81,8 @@ def bird_eye_view(frame, distances_mat, bottom_points, scale_w, scale_h, risk_co
         
     return blank_image
     
-# Function to draw bounding boxes according to risk factor for persons in a frame and draw lines between
-# boxes according to risk factor between two persons.
+# Function to draw bounding boxes according to risk factor for humans in a frame and draw lines between
+# boxes according to risk factor between two humans.
 # Red: High Risk
 # Yellow: Low Risk
 # Green: No Risk 
