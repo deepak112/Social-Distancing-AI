@@ -85,7 +85,7 @@ More result frames are in output folder
 
 ## Idea Credits
 
-   Landing.ai
+   [Landing.ai](https://landing.ai/landing-ai-creates-an-ai-tool-to-help-customers-monitor-social-distancing-in-the-workplace/)
 
 ## License:
 
