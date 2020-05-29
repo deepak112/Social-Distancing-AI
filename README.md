@@ -89,7 +89,8 @@ More result frames are in output folder
 
 ## License:
 
-   Copyright © 2020, [Deepak Birla](https://github.com/deepak112). Released under the [MIT License]   (https://github.com/deepak112/Social-Distancing-AI/blob/master/LICENSE).
+   Copyright © 2020, [Deepak Birla](https://github.com/deepak112). 
+   Released under the [MIT License](https://github.com/deepak112/Social-Distancing-AI/blob/master/LICENSE).
 
 
 
