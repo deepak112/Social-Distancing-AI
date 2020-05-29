@@ -1,12 +1,17 @@
 # Social Distancing AI
-Tool to moniter social distancing from CCTV, videos using Python, Deep learning, Computer Vision.
+Tool to moniter social distancing from CCTV, videos using Python, Deep learning, Computer Vision. This tool can automatically estimate interpersonal distance from uncalibrated RGB cameras. Can be used at public places and workplace.
+
+In the fight against the coronavirus, social distancing has proven to be a very effective measure. To help ensure social distancing protocol in public places and workplace, I have developed an social distancing detection tool that can detect if people are keeping a safe distance from each other by analyzing real time video streams from the camera.
+
+This tool do following things:
+
+Detect the humans in the frame with yolov3.
+Calculate the distance between all humans detected in the frame.
+Shows how many people are at High, Low and No risk.
 
 ## Demo
 ![Demo](./demo/social_distancing.gif)
-
-## Problem Statement:
-    To moniter distance between persons from CCTV feeds or videos.
-     
+    
 ## Requirements:
 
     You will need the following to run the above:
