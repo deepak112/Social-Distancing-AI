@@ -6,7 +6,7 @@ we can have top view of scene or ROI. This top view or bird eye view has the pro
 distributed uniformally horizontally and vertically(scale for horizontal and vertical direction will be
  different). So for bird eye view points are equally distributed, which was not case for normal view.
 
-YOLO V3 is used to detect humans in frame and by calculating center point of bounding boxe around humans, 
+YOLO V3 is used to detect humans in frame and by calculating bottom center point of bounding boxe around humans, 
 we transform those points to bird eye view. And then calculates risk factor by calculating distance between
 points and then drawing birds eye view and drawing bounding boxes and distance lines between boxes on frame.
 '''
@@ -174,8 +174,8 @@ def calculate_social_distancing(vid_path, net, output_dir, output_vid, ln1):
             count = count + 1
             continue
             
-        # Here we will be using center point of bounding box for all boxes and will transform all those
-        # center points to bird eye view
+        # Here we will be using bottom center point of bounding box for all boxes and will transform all those
+        # bottom center points to bird eye view
         person_points = utills.get_transformed_points(boxes1, prespective_transform)
         
         # Here we will calculate distance between transformed points(humans)
