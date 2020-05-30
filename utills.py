@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 '''
-Contains functions to calculate center for all bounding boxes and transform prespective for all points,
+Contains functions to calculate bottom center for all bounding boxes and transform prespective for all points,
 calculate distance between humans, calculate width and height scale ratio for bird eye view,
 and calculates number of humans at risk, low risk, no risk according to closeness.
 '''
@@ -19,13 +19,13 @@ __python_version__  = "3.5.2"
 import cv2
 import numpy as np
 
-# Function to calculate center for all bounding boxes and transform prespective for all points.
+# Function to calculate bottom center for all bounding boxes and transform prespective for all points.
 def get_transformed_points(boxes, mi):
     
     bottom_points = []
     for box in boxes:
-        #pnts = np.array([[[int(box[0]+(box[2]*0.5)),int(box[1]+box[3])]]] , dtype="float32")
-        pnts = np.array([[[int(box[0]+(box[2]*0.5)),int(box[1]+(box[3]*0.5))]]] , dtype="float32")
+        pnts = np.array([[[int(box[0]+(box[2]*0.5)),int(box[1]+box[3])]]] , dtype="float32")
+        #pnts = np.array([[[int(box[0]+(box[2]*0.5)),int(box[1]+(box[3]*0.5))]]] , dtype="float32")
         bd_pnt = cv2.perspectiveTransform(pnts, mi)[0][0]
         pnt = [int(bd_pnt[0]), int(bd_pnt[1])]
         bottom_points.append(pnt)
