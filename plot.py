@@ -3,7 +3,6 @@
 '''
 Contain functions to draw Bird Eye View for region of interest(ROI) and draw bounding boxes according to risk factor
 for humans in a frame and draw lines between boxes according to risk factor between two humans. 
-draw 
 '''
 
 __title__           = "plot.py"
