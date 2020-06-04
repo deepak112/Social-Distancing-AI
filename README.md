@@ -30,7 +30,7 @@
     here : https://pjreddie.com/media/files/yolov3.weights)
     
     For running: 
-    Good GPU, for faster results. CPU is also fine
+    Good GPU, for faster results. CPU is also fine(I have tried it on CPU).
     
 ## File Structure:
 
